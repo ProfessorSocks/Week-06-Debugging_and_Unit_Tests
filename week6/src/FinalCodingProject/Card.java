@@ -6,6 +6,10 @@ public class Card {
     private String name;
 
     // calls
+    public Card(){
+        
+    } 
+
     public Card(String rank,String suit){
         this.name = rank + " of " + suit;
         if(rank == "Jack"){

@@ -12,10 +12,13 @@ public class Deck {
     private String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
     private String[] ranks = {"2", "3","4","5","6","7","8", "9","10", "Jack", "Queen", "King", "Ace"};
 
-    Deck() {
-        for(int i = 0; i < suits.length;i++){
+    public Deck() {
+        int j = 0;
+        for(int i = 0;i  < suits.length;i++){
             for(String rank : ranks){
-                deck[i] = new Card(rank,suits[i]);
+                System.out.println(rank + suits[i]);
+                deck[j] = new Card(rank,suits[i]);
+                j += 1;
             }
         }
         
@@ -23,15 +26,22 @@ public class Deck {
 
 
     //getters/setters
-    public Card[] getDeck() {
-        return deck;
+    public void getDeck() {
+        for(Card card  : deck){
+            System.out.println(card.describe());
+        }
     }
 
     //methods
 
-    public void fillDeck(){
-        
-    }
+    // public void fillDeck(){
+    //     for(int i = 0; i < suits.length;i++){
+    //         for(String rank : ranks){
+    //             Card card = new Card(rank,suits[i]);
+    //             deck[i] = card;
+    //         }
+    //     }
+    // }
 
     public void shuffle(){
         for (int i = 0; i < 1000; i++) {
@@ -45,7 +55,7 @@ public class Deck {
 
     public Card draw(){
         topCard +=1;
-        return deck[topCard];
+        return this.deck[topCard];
     }
 
 
